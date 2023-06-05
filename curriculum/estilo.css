@@ -12,9 +12,21 @@ body {
   .foto{
     width: 150px;
     height: 150px;
-
-
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    left: 70%;
+    margin-top: -20%;
   }
+  
+ /* .section-foto{
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+  }*/
 
 
   h1 {
@@ -96,4 +108,22 @@ body {
     color:#007BFF;
     
 
+  }
+  .border{
+    box-sizing: border-box;
+  }
+
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-item {
+    width: 100%;
+  }
+  .imgs{
+    width: 90%;
+    height: 90%;
   }
