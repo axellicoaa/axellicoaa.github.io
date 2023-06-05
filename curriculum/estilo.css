@@ -19,6 +19,15 @@ body {
     left: 70%;
     margin-top: -20%;
   }
+  
+ /* .section-foto{
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+  }*/
+
 
   h1 {
     color: #007BFF;
