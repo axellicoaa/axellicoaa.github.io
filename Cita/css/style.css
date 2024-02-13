@@ -3,9 +3,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url('/imagenes/fondo.avif'); /* Reemplaza 'ruta/a/la/imagen.jpg' con la ruta de tu imagen */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */
-    background-position: center; /* Centra la imagen */
 }
 .container {
     display: flex;
