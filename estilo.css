@@ -1,99 +1,45 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #F2F2F2;
-    color: #333333;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .foto{
-    width: 150px;
-    height: 150px;
-
-
-  }
-
-
-  h1 {
-    color: #007BFF;
-    text-align: center;
-  }
-
-  .section {
-    margin-bottom: 30px;
-    
-  }
-
-  .section h2 {
-    color: #007BFF;
-    font-size: 18px;
-  }
-
-  .section-content {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 5px;
-    border: 2px solid #007BFF;
-    
-  }
-
-  .section-content p {
-    margin: 0;
-    
-  }
-
-  .experience-item {
-    margin-bottom: 20px;
-  }
-
-  .experience-item h3 {
-    color: #007BFF;
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-
-  .experience-item p {
-    margin-bottom: 0;
-  }
-
-  .education-item {
-    margin-bottom: 20px;
-  }
-
-  .education-item h3 {
-    color: #007BFF;
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-
-  .education-item p {
-    margin-bottom: 0;
-  }
-
-  .skills-item {
-    margin-bottom: 5px;
-  }
-
-  .skills-item h3 {
-    color: #007BFF;
-    font-size: 16px;
-
-  }
-
-  .skills-item ul {
     margin: 0;
     padding: 0;
-    list-style-type: none;
-  }
+    overflow: hidden;
 
-  .skills-item li {
-  
-    margin-right: 1px;
-    background-color: #FFFFFF;
-    color:#007BFF;
-    
+}
 
-  }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.box {
+    padding: 20px;
+    border: (255, 255, 255, 0.5);
+    border-radius: 10px;
+    background-color:(255, 255, 255, 0.5);
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btnYes{ 
+    background-color: rgb(255, 132, 156);
+
+}
+.btnNo{
+    background-color: darkgray;
+}
+button:hover {
+    transform: scale(1.1);
+}
+.heart {
+    position: absolute;
+    animation: rain 2s linear;
+}
