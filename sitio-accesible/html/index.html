@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página web accesible para todos los usuarios">
+    <title data-i18n="title">Sitio Web Accesible</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/i18next/i18next.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 data-i18n="header.title">Bienvenidos al Sitio Accesible</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="#acerca" data-i18n="nav.about">Acerca</a></li>
+                <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section>
+            <h2 data-i18n="main.content">Contenido Principal</h2>
+            <p data-i18n="main.description">Esta página está diseñada para ser accesible a todos los usuarios.</p>
+            <button id="modo-contraste" data-i18n="main.contrast">Activar Modo de Alto Contraste</button>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <button id="traduccion" data-i18n="footer.translate">Traducir</button>
+        <p data-i18n="footer.contact">Contacto: <a href="mailto:soporte@accesible.com">soporte@accesible.com</a></p>
+        <div class="botones-plus-minus">
+            <button id="plus">+</button>
+            <button id="minus">-</button>
+        </div>
+    </footer>
+    <script src="/script/script.js"></script>
+</body>
+</html>
