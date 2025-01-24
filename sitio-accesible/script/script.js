@@ -1,87 +1,35 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('modo-contraste');
-    button.addEventListener('click', () => {
+    const contrasteButton = document.getElementById('modo-contraste');
+    const aumentarTextoButton = document.getElementById('aumentar-texto');
+    const disminuirTextoButton = document.getElementById('disminuir-texto');
+    const selectorIdioma = document.getElementById('selector-idioma');
+    const contenidoDinamico = document.getElementById('contenido-dinamico');
+
+    // Modo Alto Contraste
+    contrasteButton.addEventListener('click', () => {
         document.body.classList.toggle('alto-contraste');
     });
 
-    // Configura i18next
-    i18next.init({
-        lng: 'es', // Idioma inicial
-        debug: true,
-        resources: {
-            es: {
-                translation: {
-                    title: "Sitio Web Accesible",
-                    "header.title": "Bienvenidos al Sitio Accesible",
-                    "nav.home": "Inicio",
-                    "nav.about": "Acerca",
-                    "nav.contact": "Contacto",
-                    "main.content": "Contenido Principal",
-                    "main.description": "Esta página está diseñada para ser accesible a todos los usuarios.",
-                    "main.contrast": "Activar Modo de Alto Contraste",
-                    "footer.translate": "Traducir",
-                    "footer.contact": "Contacto: soporte@accesible.com"
-                }
-            },
-            en: {
-                translation: {
-                    title: "Accessible Website",
-                    "header.title": "Welcome to the Accessible Site",
-                    "nav.home": "Home",
-                    "nav.about": "About",
-                    "nav.contact": "Contact",
-                    "main.content": "Main Content",
-                    "main.description": "This page is designed to be accessible to all users.",
-                    "main.contrast": "Activate High Contrast Mode",
-                    "footer.translate": "Translate",
-                    "footer.contact": "Contact: soporte@accesible.com"
-                }
-            }
-        }
-    }, (err, t) => {
-        if (err) return console.error(err);
-        updateContent(); // Inicializa el contenido traducido
+    // Cambiar tamaño de texto
+    aumentarTextoButton.addEventListener('click', () => {
+        document.body.style.fontSize = '120%';
     });
 
-    const traduccion = document.getElementById('traduccion');
-    traduccion.addEventListener('click', () => {
-        const newLang = i18next.language === 'es' ? 'en' : 'es';
-        i18next.changeLanguage(newLang, updateContent);
+    disminuirTextoButton.addEventListener('click', () => {
+        document.body.style.fontSize = '100%';
     });
 
-    // Función para actualizar el contenido traducido
-    function updateContent() {
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            element.textContent = i18next.t(key);
-        });
-    }
+    // Traducción dinámica
+    selectorIdioma.addEventListener('change', (e) => {
+        const idioma = e.target.value;
+        fetch('/sitio-accesible/json/lang.json')
+            .then((response) => response.json())
+            .then((data) => {
+                const traducciones = data[idioma];
+                contenidoDinamico.querySelector('h2').textContent = traducciones.titulo;
+                contenidoDinamico.querySelector('p').textContent = traducciones.mensaje;
+            });
+    });
 });
-
-
-
-
-
-// Obtener los botones de aumentar y disminuir
-const plusButton = document.getElementById('plus');
-const minusButton = document.getElementById('minus');
-
-// Obtener el body para cambiar el tamaño de la fuente
-const body = document.querySelector('body');
-
-// Función para aumentar el tamaño de la fuente
-plusButton.addEventListener('click', () => {
-    let currentFontSize = window.getComputedStyle(body).fontSize;
-    currentFontSize = parseFloat(currentFontSize); // Convertir a número
-    body.style.fontSize = (currentFontSize + 2) + 'px'; // Aumentar tamaño
-});
-
-// Función para disminuir el tamaño de la fuente
-minusButton.addEventListener('click', () => {
-    let currentFontSize = window.getComputedStyle(body).fontSize;
-    currentFontSize = parseFloat(currentFontSize); // Convertir a número
-    body.style.fontSize = (currentFontSize - 2) + 'px'; // Disminuir tamaño
-});
-
-
-    
