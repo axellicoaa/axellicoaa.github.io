@@ -1,144 +1,116 @@
-/* styles.css */
-
-/* Reset básico */
-main p {
-    font-size: 16px; /* Tamaño de fuente inicial */
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos generales */
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
+    color: #000000;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+/* Header */
 header {
-    background: #0078d7;
+    background-color: #0078D7;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem 0;
     text-align: center;
 }
-
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    margin: 1rem 0 0 0;
 }
-
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Main */
+main {
+    flex: 1; /* Para empujar el footer hacia abajo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Secciones */
+section {
+    margin: 1.5rem 0;
+}
+#configuracion {
+    margin-top: 1rem;
 }
 
 /* Botones */
 button {
-    background-color: #0078d7;
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0078D7;
     color: white;
     border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
-
 button:hover {
-    background-color: #005bb5;
+    background-color: #005BB5;
 }
-
 button:focus {
     outline: 3px solid yellow;
 }
 
-/* Modo de Alto Contraste */
+/* Selector de idioma */
+select {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Alto Contraste */
 body.alto-contraste {
     background-color: black;
     color: white;
 }
-
 body.alto-contraste button {
     background-color: yellow;
     color: black;
 }
-
-/* Estilos de main */
-main {
-    flex: 1;
-    padding: 2rem;
+body.alto-contraste select {
+    background-color: yellow;
+    color: black;
+    border-color: black;
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background-color: #0078D7;
     color: white;
     text-align: center;
     padding: 1rem 0;
-    margin-top: auto;
-    display: flex;
-    justify-content: space-around; /* Centra los botones horizontalmente */
-    gap: 10px; /* Espacio entre los botones */
+    margin-top: auto; /* Para mantener el footer en la parte inferior */
 }
-
-footer button {
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-footer button:hover {
-    background-color: #005bb5;
-}
-
-footer button:focus {
-    outline: 3px solid yellow;
-}
-
 footer a {
-    color: #ffdd57;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
+    color: white;
     text-decoration: underline;
 }
-/* Estilo específico para los botones + y - juntos */
-.botones-plus-minus {
-    display: inline-flex; /* Los coloca en línea uno junto al otro */
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.botones-plus-minus button {
-    border: none;
-    border-radius: 0; /* Elimina el borde redondeado por separado */
-    width: 40px; /* Ancho fijo para que los botones tengan el mismo tamaño */
-}
-
-.botones-plus-minus button:first-child {
-    border-right: 1px solid #0078d7; /* Separador entre los dos botones */
-}
-
-.botones-plus-minus button:hover {
-    background-color: #005bb5;
-}
-
-.botones-plus-minus button:focus {
-    outline: 3px solid yellow;
+footer a:hover {
+    color: #FFDD00;
 }
