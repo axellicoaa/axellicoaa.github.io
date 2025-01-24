@@ -3,39 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página web accesible para todos los usuarios">
-    <title data-i18n="title">Sitio Web Accesible</title>
+    <meta name="description" content="Plataforma avanzada con accesibilidad total">
+    <title>Plataforma Accesible</title>
     <link rel="stylesheet" href="/sitio-accesible/css/style.css">
-    <script src="https://unpkg.com/i18next/i18next.min.js"></script>
 </head>
 <body>
     <header>
-        <h1 data-i18n="header.title">Bienvenidos al Sitio Accesible</h1>
-        <nav>
+        <h1 id="titulo-pagina">Plataforma Accesible</h1>
+        <nav aria-label="Navegación Principal">
             <ul>
-                <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
-                <li><a href="#acerca" data-i18n="nav.about">Acerca</a></li>
-                <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca">Acerca de Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="inicio">
         <section>
-            <h2 data-i18n="main.content">Contenido Principal</h2>
-            <p data-i18n="main.description">Esta página está diseñada para ser accesible a todos los usuarios.</p>
-            <button id="modo-contraste" data-i18n="main.contrast">Activar Modo de Alto Contraste</button>
+            <h2>Herramientas de Accesibilidad</h2>
+            <div id="configuracion">
+                <button id="modo-contraste">Alto Contraste</button>
+                <button id="aumentar-texto">Aumentar Texto</button>
+                <button id="disminuir-texto">Disminuir Texto</button>
+                <select id="selector-idioma" aria-label="Seleccionar Idioma">
+                    <option value="es">Español</option>
+                    <option value="en">Inglés</option>
+                    <option value="fr">Francés</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="contenido-dinamico">
+            <h2>Bienvenido</h2>
+            <p>Este sitio está diseñado para ser accesible a todos los usuarios.</p>
         </section>
     </main>
 
-    <footer id="contacto">
-        <button id="traduccion" data-i18n="footer.translate">Traducir</button>
-        <p data-i18n="footer.contact">Contacto: <a href="mailto:soporte@accesible.com">soporte@accesible.com</a></p>
-        <div class="botones-plus-minus">
-            <button id="plus">+</button>
-            <button id="minus">-</button>
-        </div>
+    <footer>
+        <p>Contacto: <a href="mailto:accesible@correo.com">accesible@correo.com</a></p>
     </footer>
+
     <script src="/sitio-accesible/script/script.js"></script>
 </body>
 </html>
