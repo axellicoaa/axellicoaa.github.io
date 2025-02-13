@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffcccb;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.imagen {
+    width: 250px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+}
+.contenedor {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la tarjeta y la imagen */
+}
+.tarjeta {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: red;
+}
